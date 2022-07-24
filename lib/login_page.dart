@@ -35,30 +35,27 @@ class _LoginState extends State<Login> {
         body: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(
+                height: 50,
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                margin: EdgeInsets.all(70),
+                child: Text(
+                  "Icon Picker",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
 
-            Stack(
-              children:<Widget> [
-                Container(
-                  height: 200,
-                  width: MediaQuery.of(context).size.width,
+                  ),
+                ),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
                   color: Colors.deepPurple,
                 ),
-                Positioned(
-                    top: 30,
-                    left: 100,
-                    child: Container(
-                      height: 100,
-                      width: 50,
-                      color: Colors.red,
-                    )
-                ),
-
-              ],
-            ),
-              Container(
-                height: 40,
-                width: 50,
               )
+
+
             ],
           ),
         ),
