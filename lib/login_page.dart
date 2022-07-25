@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -9,6 +10,19 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   @override
+  late String zemail;
+  String xpassword = "";
+  TextEditingController userController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+  bool _obsecureText = true;
+  bool isChecked = false;
+  
+  void toggle() {
+    setState(() {
+      _obsecureText = !_obsecureText;
+    });
+  }
+
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height,
@@ -52,6 +66,98 @@ class _LoginState extends State<Login> {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: Colors.deepPurple,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  child: TextFormField(
+                    controller: userController,
+                    style: const TextStyle(
+                      //fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                    onChanged: (input) {
+                      zemail = input;
+                    },
+                    validator: (input) {
+                      if (input!.isEmpty) {
+                        return "Empty";
+                      }
+                    },
+                    scrollPadding: EdgeInsets.all(20),
+                    decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.only(
+                          left: 20), // add padding to adjust text
+                      isDense: false,
+                      hintStyle: TextStyle(
+                        //fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.black,
+                      ),
+                      labelText: "User Name",
+                      labelStyle: TextStyle(
+                        //fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.deepPurple,
+                      ),
+                      border: OutlineInputBorder(),
+                      suffixIcon: Padding(
+                        padding: EdgeInsets.only(
+                            top: 8), // add padding to adjust icon
+                        child: Icon(Icons.person),
+                      ),
+                  ),
+                )
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: TextFormField(
+                    controller: passController,
+                    onChanged: (input){
+                      xpassword=input;
+                    },
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.deepPurple,
+                    ),
+                    validator: (input){
+                      if(input!.isEmpty){
+                        return "Empty";
+                      }
+                    },
+                    scrollPadding: EdgeInsets.all(20),
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.only(left: 20),
+                      isDense: true,
+                      hintStyle: const TextStyle(
+                        fontSize: 18,
+                        color: Colors.deepPurple,
+                      ),
+                      labelText: "Password",
+                      labelStyle: const TextStyle(
+                        fontSize: 18,
+                        color: Colors.deepPurple,
+
+                      ),
+                      border: OutlineInputBorder(),
+                      suffixIcon: Padding(
+                        padding: const EdgeInsets.only(top: 8),
+                        child: IconButton(
+                          icon: Icon(
+                              _obsecureText    ? FontAwesomeIcons.solidEye
+                                  : FontAwesomeIcons.solidEyeSlash,
+                          ),
+                          onPressed: () {
+                            toggle();
+                          },
+                        ),
+                      )
+                    ),
+                  ),
                 ),
               )
 
