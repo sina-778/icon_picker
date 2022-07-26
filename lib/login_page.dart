@@ -159,10 +159,62 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
-              )
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: SizedBox(
+                  height: 50,
+                  width: 120,
+                  child: OutlinedButton(
+                    onPressed: null,
+
+                    style: ButtonStyle(
+                      padding: MaterialStateProperty.all(EdgeInsets.only(left: 10,right: 10)) ,
+
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0))),
+                      backgroundColor: MaterialStateProperty.all(Colors.deepPurple) ,
+                    ),
+                    child: const Text("Log In",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Container(
+              //   color: Colors.deepPurple,
+              //
+              //   // child: FlatButton(
+              //   //     shape: RoundedRectangleBorder(
+              //   //       borderRadius: BorderRadius.circular(20)
+              //   //     ),
+              //   //     onPressed: () async {
+              //   //
+              //   //     },
+              //   //     child: Text(
+              //   //       "Log In",
+              //   //       style: TextStyle(
+              //   //         color: Colors.white,
+              //   //         fontSize: 18,
+              //   //       ),
+              //   //       textAlign: TextAlign.center,
+              //   //     )),
+              //   child: OutlinedButton(
+              //     onPressed: null,
+              //     style: ButtonStyle(
+              //       shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0))),
+              //     ),
+              //     child: const Text("Log In"),
+              //   ),
+              // )
 
 
             ],
+
           ),
         ),
       ),
