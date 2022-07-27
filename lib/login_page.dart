@@ -175,12 +175,9 @@ class _LoginState extends State<Login> {
                       login_api.login_info("sina", "1122");
                       print(login_api.data!.name);
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Screen()));
-
                     },
-
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all(EdgeInsets.only(left: 10,right: 10)) ,
-
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(40.0))),
                       backgroundColor: MaterialStateProperty.all(Colors.deepPurple) ,
                     ),
