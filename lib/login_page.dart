@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:icon_picker/service_class/login_api.dart';
 
 import 'homepage.dart';
 
@@ -18,6 +19,7 @@ class _LoginState extends State<Login> {
   TextEditingController passController = TextEditingController();
   bool _obsecureText = true;
   bool isChecked = false;
+  Login_api login_api= Login_api();
   
   void toggle() {
     setState(() {
@@ -170,6 +172,8 @@ class _LoginState extends State<Login> {
                   width: 120,
                   child: OutlinedButton(
                     onPressed: (){
+                      login_api.login_info("sina", "1122");
+                      print(login_api.data!.name);
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Screen()));
 
                     },
